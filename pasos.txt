@@ -1,0 +1,36 @@
+crear modulo graficas
+  ng g m graficas --routing
+
+crear componentes
+  ng g c graficas/pages/barras --skip-Tests -is
+  ng g c graficas/pages/barrasDoble --skip-Tests -is
+  ng g c graficas/pages/dona --skip-Tests -is
+  ng g c graficas/pages/donaHttp --skip-Tests -is
+
+  ng g c graficas/components/graficaBarra --skip-Tests -is
+
+  ng g c shared/menu --skip-Tests -is
+
+crear servicio
+  ng g s graficas/services/graficas --skip-Tests
+
+
+agregar la libreria ng2-charts
+  npm install --save ng2-charts
+  npm install --save chart.js
+
+
+  import { NgChartsModule } from 'ng2-charts';
+  imports: [
+    CommonModule,
+    GraficasRoutingModule,
+    NgChartsModule
+  ]
+
+app.module
+  import { HttpClientModule } from '@angular/common/http';
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
